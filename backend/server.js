@@ -9,7 +9,7 @@ const routes = require('./routes/index');
 const morgan = require('morgan');
 
 // load env variables
-dotenv.config({ path:path.join(__dirname, '/config/config.env')});
+dotenv.config({ path:path.join(__dirname, '/config/.env')});
 app.use(cors());
 
 // parse application/x-www-form-urlencoded
