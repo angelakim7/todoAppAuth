@@ -37,7 +37,7 @@ It was my first time working with authentication. I used bcrypt to apply a salt 
 
 ## Database
 
-It was also my first time working with a database, and I decided to use MongoDB for this application. The folder `models/` contains the schema definitions for the Mongoose models. The env file was put into gitignore to store the MongoDB database credentials in a more secure place. If you need to see this file, please let me know. 
+It was also my first time working with a database, and I decided to use MongoDB for this application. The folder `models/` contains the schema definitions for the Mongoose models.
 
 ## Routes
 
