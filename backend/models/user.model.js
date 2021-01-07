@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-// user schema
+//user schema
 const userSchema =  new mongoose.Schema({
-    // _id:Number,
     username:String,
     password:String
 });

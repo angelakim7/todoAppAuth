@@ -8,6 +8,7 @@ router
 router
     .route('/login')
     .post(User.login)
+    
 router 
     .route('/tokenIsValid')
     .post(User.verifyToken)

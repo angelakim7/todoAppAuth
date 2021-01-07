@@ -2,7 +2,6 @@ const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-
 module.exports ={
     register: async (req,res) => {
         try{
@@ -11,13 +10,13 @@ module.exports ={
             if(!username || !password)
                 return res
                     .status(400)
-                    .json({msg:"Not all fields have been entered"});
+                    .json({msg:"Not all fields have been entered."});
             
             const existingUser = await User.findOne({username: username})
             if(existingUser)
                 return res
                     .status(400)
-                    .json({msg:"This username already exists"})
+                    .json({msg:"This username already exists."})
 
             const salt = await bcrypt.genSalt();
             const passwordHash = await bcrypt.hash(password,salt);
@@ -83,8 +82,5 @@ module.exports ={
           } catch (err) {
             res.status(500).json({ error: err.message });
           }
-
     }
-
-
-}
+};

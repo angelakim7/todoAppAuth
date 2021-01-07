@@ -27,8 +27,8 @@ module.exports={
 		db.Todos.find({isCompleted:false})
 		.then(todos=> res.json(todos))
 		.catch(err => res.status(422).json(err))
-	},
-	
+    },
+    
 	create: function(req,res){
 		db.Todos.create(req.body)
 		.then(todos=> 

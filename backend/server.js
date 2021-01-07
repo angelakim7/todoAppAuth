@@ -14,10 +14,9 @@ app.use(cors());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
+
 // parse application/json
 app.use(bodyParser.json());
-// Serve static files from the React app
-// app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Use development logging middleware
 if (process.env.NODE_ENV === 'development') {
@@ -25,9 +24,8 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-// add routes both api and view
+// add routes
 app.use('/', routes);
-
 
 
 const PORT = process.env.PORT || 3000;
@@ -45,15 +43,5 @@ mongoose.connect(uri, {
 
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log('MongoDB database connection established successfully');
+  console.log('MongoDB database connection established successfully.');
 });
-
-
-
-// express doesn't consider not found 404 as an error so we need to handle 404 it explicitly
-// handle 404 error
-// app.use(function(req, res, next) {
-// 	let err = new Error('Not Found');
-//     err.status = 404;
-//     next(err);
-// });
