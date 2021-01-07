@@ -15,8 +15,18 @@ module.exports={
     },
     findByUser: function(req,res){
         db.Todos.find({username:req.params.username})
-        .then(todos=> res.json(todos))
+        .then(dbModel=> res.json(dbModel))
         .catch(err => res.status(422).json(err))
+	},
+	findByCompleted: function(req,res){
+		db.Todos.find({isCompleted:true})
+		.then(todos=> res.json(todos))
+		.catch(err => res.status(422).json(err))
+	},
+	findByIncompleted: function(req,res){
+		db.Todos.find({isCompleted:false})
+		.then(todos=> res.json(todos))
+		.catch(err => res.status(422).json(err))
 	},
 	
 	create: function(req,res){
